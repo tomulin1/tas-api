@@ -25,10 +25,13 @@ You can pass parameters for sorting and filtering.
 
 ### Authenticate [POST]
 
-    + Parameters
-        + username: yourId
-        + password: yourpass
-        + grant_type: password
++ Request Login (application/json)
+
+        {
+            "username": "yourId"
+            "password": "yourpass"
+            "grant_type": "password"
+        }
 
 + Response 200 (application/json)
 
