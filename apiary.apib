@@ -49,7 +49,7 @@ You can pass parameters for sorting and filtering.
 
 ### List All Tasks [GET]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "total_count": "84",
@@ -78,7 +78,7 @@ You can pass parameters for sorting and filtering.
     + Parameters
         + type (mine|to-assign|to-assign-dues|to-pull|done)
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "total_count": "84",
@@ -104,7 +104,7 @@ You can pass parameters for sorting and filtering.
         
 ## Get Task [GET /tasks/{taskId}]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "itask_name": "Example of task",
@@ -121,7 +121,7 @@ You can pass parameters for sorting and filtering.
       
 ## Get Tasks Summary [GET /tasks/info]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "MY_TASKS": "100",
@@ -134,7 +134,7 @@ You can pass parameters for sorting and filtering.
 
 ## Get Task Variables [GET /tasks/{taskId}/variables]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "total_count": "84",
@@ -160,7 +160,7 @@ You can pass parameters for sorting and filtering.
 
 ## Get Task Attachments [GET /tasks/{taskId}/attachments]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "total_count": "84",
@@ -197,7 +197,7 @@ You can pass parameters for sorting and filtering.
             ]
         }
             
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "result": true
@@ -217,7 +217,7 @@ You can pass parameters for sorting and filtering.
             "ivar_value": "Value of variable (text, number, date, ...)"
         }
             
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "result": true
@@ -227,7 +227,7 @@ You can pass parameters for sorting and filtering.
 
 ### List All Processes [GET]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "total_count": "84",
@@ -256,7 +256,7 @@ You can pass parameters for sorting and filtering.
     + Parameters
         + type (done|problem|after-due-date|suspended)
         
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "total_count": "84",
@@ -282,7 +282,7 @@ You can pass parameters for sorting and filtering.
         
 ## Get Process [GET /processes/{processId}]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "id": "Example of task",
@@ -303,7 +303,7 @@ You can pass parameters for sorting and filtering.
 
 ## Get Process Variables [GET /processes/{processId}/variables]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "total_count": "10",
@@ -325,7 +325,7 @@ You can pass parameters for sorting and filtering.
 
 ## Get Process Notes [GET /processes/{processId}/notes]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "total_count": "84",
@@ -347,7 +347,7 @@ You can pass parameters for sorting and filtering.
         
 ## Get Process Attachments [GET /processes/{processId}/attachments]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "total_count": "84",
@@ -367,7 +367,7 @@ You can pass parameters for sorting and filtering.
 
 ## Get Process Actual Tasks [GET /processes/{processId}/tasks]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "total_count": "84",
@@ -397,7 +397,7 @@ You can pass parameters for sorting and filtering.
 
 ### List All Custom Views [GET]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "total_count": "5",
@@ -419,7 +419,7 @@ You can pass parameters for sorting and filtering.
 
 ### Get Template Process [GET /template-processes/{templateId}]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "id": "1",
@@ -435,7 +435,7 @@ You can pass parameters for sorting and filtering.
 
 ### List All Template Processes [GET]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "total_count": "84",
@@ -460,7 +460,7 @@ You can pass parameters for sorting and filtering.
 
 ### List All Template Processes in Folder [GET /template-processes/folder/{id}]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "total_count": "84",
@@ -485,7 +485,7 @@ You can pass parameters for sorting and filtering.
         
 ### List All Template Processes Folders [GET /template-processes/folder/structure]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "meta": { "href" : "/template-processes/folder/structure", },
@@ -509,14 +509,14 @@ You can pass parameters for sorting and filtering.
         
 ### List All Template Variables for Template Process [GET /template-processes/{templateId}/template-variables/]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
         }          
- 
+
 ### Get Template Variable for Template Process [GET /template-variables/{templateVariableId}]       
   
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
         }
@@ -525,7 +525,7 @@ You can pass parameters for sorting and filtering.
 
 ### List All Template Tasks for Template Process [GET]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "total_count": "84",
@@ -554,7 +554,7 @@ You can pass parameters for sorting and filtering.
         
 ### Get Template Task [GET /template-tasks/{templateTaskId}]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "id": "1",
@@ -577,7 +577,7 @@ You can pass parameters for sorting and filtering.
 
 ### List All Users [GET]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "total_count": "84",
@@ -600,7 +600,7 @@ You can pass parameters for sorting and filtering.
   
 ### List Users of Organization Unit [GET /users/organization/{orgstrId}]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "total_count": "84",
@@ -623,7 +623,7 @@ You can pass parameters for sorting and filtering.
         
 ### Get User [GET /users/{userId}]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "id": 1
@@ -639,7 +639,7 @@ You can pass parameters for sorting and filtering.
         
 ### Get org.structure [GET /org-structure]
 
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "meta": { "href" : "/org-structure", },
@@ -684,7 +684,7 @@ You can pass parameters for sorting and filtering.
 ## Plan [/plans]
 ### List All Plans [GET]
         
-+ Response 200 (application/json)
++ Response 200 (application/json; charset=utf-8)
 
         {
             "meta": { "href" : "/plans", },
@@ -706,7 +706,7 @@ You can pass parameters for sorting and filtering.
 ## Settings [/settings]
 ### Settings of Logged User [GET]       
 
-+ Response 200 (application/json)  
++ Response 200 (application/json; charset=utf-8)  
 
         {
             "meta": { "href" : "/settings", },
@@ -722,7 +722,7 @@ You can pass parameters for sorting and filtering.
 ## Roles  [/roles]
 ### List All Roles [GET /roles/{roleId}]      
 
-+ Response 200 (application/json)  
++ Response 200 (application/json; charset=utf-8)  
 
         {
             "meta": { "href" : "/roles", },
@@ -741,7 +741,7 @@ You can pass parameters for sorting and filtering.
 
 ### Structure of roles [GET /roles/structure]      
 
-+ Response 200 (application/json)  
++ Response 200 (application/json; charset=utf-8)  
 
         {
             "meta": { "href" : "/roles-structure", },
