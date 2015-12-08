@@ -47,7 +47,7 @@ You can pass parameters for sorting and filtering.
 
 ## Task [/tasks]
 
-### List All Tasks [GET]
+### All Tasks [GET]
 
 + Response 200 (application/json; charset=utf-8)
 
@@ -107,7 +107,7 @@ You can pass parameters for sorting and filtering.
             ]
         }
  
-### List Tasks With Special Condition [GET /tasks/{+type}]
+### Tasks With Special Condition [GET /tasks/{+type}]
 
     + Parameters
         + type (mine|to-assign|to-assign-dues|to-pull|done)
@@ -259,7 +259,7 @@ You can pass parameters for sorting and filtering.
 
 ## Process [/processes]
 
-### List All Processes [GET]
+### All Processes [GET]
 
 + Response 200 (application/json; charset=utf-8)
 
@@ -285,7 +285,7 @@ You can pass parameters for sorting and filtering.
             ]
         }
 
-### List Processes With Special Condition [GET /processes/{+type}]
+### Processes With Special Condition [GET /processes/{+type}]
 
     + Parameters
         + type (done|problem|after-due-date|suspended)
@@ -429,7 +429,7 @@ You can pass parameters for sorting and filtering.
         
 ## Custom Views [/custom-views]
 
-### List All Custom Views [GET]
+### All Custom Views [GET]
 
 + Response 200 (application/json; charset=utf-8)
 
@@ -467,7 +467,8 @@ You can pass parameters for sorting and filtering.
             "meta": { "href": "/template-process/1211" }
         }
 
-### List All Template Processes [GET]
+### All Template Processes [GET]
+Retrieve all non-deleted template processes.
 
 + Response 200 (application/json; charset=utf-8)
 
@@ -494,7 +495,7 @@ You can pass parameters for sorting and filtering.
             ]
         }
 
-### List All Template Processes in Folder [GET /template-processes/folder/{id}]
+### All Template Processes in Folder [GET /template-processes/folder/{id}]
 
 + Response 200 (application/json; charset=utf-8)
 
@@ -519,7 +520,7 @@ You can pass parameters for sorting and filtering.
             ]
         }
         
-### List All Template Processes Folders [GET /template-processes/folder/structure]
+### All Template Processes Folders [GET /template-processes/folder/structure]
 
 + Response 200 (application/json; charset=utf-8)
 
@@ -544,7 +545,7 @@ You can pass parameters for sorting and filtering.
             ]
         }   
         
-### List All Template Variables for Template Process [GET /template-processes/{templateId}/template-variables/]
+### All Template Variables for Template Process [GET /template-processes/{templateId}/template-variables/]
 
 + Response 200 (application/json; charset=utf-8)
 
@@ -560,7 +561,7 @@ You can pass parameters for sorting and filtering.
   
 ## Template Tasks [/template-processes/{templateId}/template-tasks]
 
-### List All Template Tasks for Template Process [GET]
+### All Template Tasks for Template Process [GET]
 
 + Response 200 (application/json; charset=utf-8)
 
@@ -612,13 +613,14 @@ You can pass parameters for sorting and filtering.
 
 ## User [/users]
 
-### List All Users [GET]
+### All Users [GET]
+Retrieve all non-deleted users.
 
 + Response 200 (application/json; charset=utf-8)
 
         {
             "total_count": "84",
-            "meta": { "href" : "/processes" },
+            "meta": { "href" : "/users" },
             "completed_in": 21,
             "previous": null,
             "next": { "meta": { "href": "/processes?offset=20&amp;limit=10"} },
@@ -635,7 +637,30 @@ You can pass parameters for sorting and filtering.
             ]
         }
   
-### List Users of Organization Unit [GET /users/organization/{orgstrId}]
+### All Deleted Users [GET /users/deleted]
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "total_count": "84",
+            "meta": { "href" : "/users/deleted" },
+            "completed_in": 21,
+            "previous": null,
+            "next": { "meta": { "href": "/processes?offset=20&amp;limit=10"} },
+            "items": [
+                {
+                    "id": "1",
+                    "user_status": "A",
+                    "user_name": "TMANN",
+                    "user_first_name": "Thomas",
+                    "user_last_name": "Mann",
+                    "user_email": "thomas@mann.com",
+                    "meta": { "href": "/users/1211" }
+                }
+            ]
+        }
+        
+### Users of Organization Unit [GET /users/organization/{orgstrId}]
 
 + Response 200 (application/json; charset=utf-8)
 
@@ -723,7 +748,7 @@ You can pass parameters for sorting and filtering.
 
         
 ## Plan [/plans]
-### List All Plans [GET]
+### All Plans [GET]
         
 + Response 200 (application/json; charset=utf-8)
 
@@ -761,7 +786,7 @@ You can pass parameters for sorting and filtering.
             ]
         }    
 ## Roles  [/roles]
-### List All Roles [GET /roles/{roleId}]      
+### All Roles [GET /roles/{roleId}]      
 
 + Response 200 (application/json; charset=utf-8)  
 
