@@ -449,6 +449,29 @@ You can pass parameters for sorting and filtering.
             ]
         }
         
+### Custom View Processes [GET /cv/{cv_id}]
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "total_count": "5",
+            "meta": { "href" : "/cv" },
+            "completed_in": 121,
+            "items": [
+                {
+                    "id": "1",
+                    "iproc_name": "some clever note",
+                    "iproc_description": "Template process name",
+                    "iproc_inst_owner_user": "P",
+                    "iproc_actual_start_date": 1,
+                    "iproc_due_date_finish": null,
+                    "iproc_priority": "M",
+                     "iproc_summary": null,
+                    "meta": { "href": "/custom-view/2489" }
+                }
+            ]
+        }
+        
 ## Template Process [/template-processes]
 
 ### Get Template Process [GET /template-processes/{templateId}]
