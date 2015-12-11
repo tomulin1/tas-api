@@ -449,7 +449,7 @@ You can pass parameters for sorting and filtering.
             ]
         }
         
-### Custom View Processes [GET /cv/{cv_id}]
+### All Custom View Processes [GET /cv/{cv_id}]
 
 + Response 200 (application/json; charset=utf-8)
 
@@ -762,6 +762,29 @@ Retrieve all non-deleted users.
             ]
         }
 
+### All org.units [GET /org-units]
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "meta": { "href" : "/org-units" },
+            "items": [
+                { 
+                    "label": "CPM",
+                    "id": 2,
+                    "level": 1,
+                    "manager_name": null,
+                    "manager_user_id": null
+                },
+                {
+                    "label": "External", 
+                    "id": 3,
+                    "level": 2 
+                    "manager_name": null,
+                    "manager_user_id": null
+                }
+            ]
+        }
         
 ## Plan [/plans]
 ### All Plans [GET]
