@@ -256,6 +256,21 @@ You can pass parameters for sorting and filtering.
         {
             "result": true
         }
+        
+## Retrieve Dynamic List [GET /tasks/dyn-list/{dlName}]
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "total_count": "84",
+            "meta": { "href" : "/tasks/dyn-list/{dlName}" },
+            "completed_in": 121,
+            "items": [
+                {
+                    "dlist_value": "some clever note",
+                    "meta": { "href": "/files/1211" }
+                }
+        }
 
 ## Process [/processes]
 
