@@ -270,6 +270,22 @@ You can pass parameters for sorting and filtering.
                     "dlist_value": "some clever note"
                 }
         }
+        
+## Task Finish [POST /tasks/finish/{taskID}]
+
++ Request (application/json)
+
+        {
+        }
+            
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "result": true,
+            "next_itask_id": 222,
+            "next_itask_name": "Name of new Task"
+        }
+
 
 ## Process [/processes]
 
@@ -867,7 +883,8 @@ Retrieve all non-deleted users.
                     "usrpar_value": "Y"
                 }
             ]
-        }    
+        }
+        
 ## Roles  [/roles]
 ### All Roles [GET /roles/{roleId}]      
 
