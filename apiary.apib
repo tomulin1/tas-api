@@ -487,6 +487,21 @@ You can pass parameters for sorting and filtering.
             ]
         }        
         
+## Process Activate [POST /processes/activate/{tprocId}]
+
++ Request (application/json)
+
+        {
+        }
+            
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "result": true,
+            "next_itask_id": 222,
+            "next_itask_name": "Name of new Task"
+        }        
+        
 ## Custom Views [/custom-views]
 
 ### All Custom Views [GET]
