@@ -936,7 +936,7 @@ Retrieve all non-deleted users.
         }
         
 ## Roles  [/roles]
-### All Roles [GET /roles/{roleId}]      
+### All Roles [GET /roles]
 
 + Response 200 (application/json; charset=utf-8)  
 
@@ -956,7 +956,23 @@ Retrieve all non-deleted users.
             ]
         }
           
+### Get Role [GET /roles/{roleId}]
 
++ Parameters
+    + roleId: 1001 (number, optional) - Id of a role.
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "id": 23,
+            "role_name": "Dashboard",
+            "role_is_deleted": "N",
+            "role_note": "Some role description",
+            "meta": {
+                "href": "/roles/23"
+            }
+        }
+        
 ### Structure of Roles [GET /roles/structure]      
 
 + Response 200 (application/json; charset=utf-8)  
