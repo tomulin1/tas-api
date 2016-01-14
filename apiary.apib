@@ -166,6 +166,27 @@ You can pass parameters for sorting and filtering.
             "TO_PULL": "22"
         }
 
+## Get Task Attachments [GET /tasks/{taskId}/attachments]
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "total_count": "84",
+            "meta": { "href" : "/tasks/{taskId}/attachments" },
+            "completed_in": 121,
+            "items": [
+                {
+                    "id": "1",
+                    "dmsf_name": "some clever note",
+                    "dmsf_insert_date": "2015-09-11T10:44:03Z",
+                    "dmsf_owner_full_name": "Thomas Mann",
+                    "dmsf_revision": 1,
+                    "iproc_name": "Name of process",
+                    "meta": { "href": "/files/1211" }
+                }
+            ]
+        }
+        
 ## Get Task Variables [GET /tasks/{taskId}/variables]
 
 + Response 200 (application/json; charset=utf-8)
@@ -191,26 +212,24 @@ You can pass parameters for sorting and filtering.
                 }
             ]
         }
-
-## Get Task Attachments [GET /tasks/{taskId}/attachments]
+       
+## Get Task Variable [GET /variables/{variableId}]
 
 + Response 200 (application/json; charset=utf-8)
 
         {
-            "total_count": "84",
-            "meta": { "href" : "/tasks/{taskId}/attachments" },
-            "completed_in": 121,
-            "items": [
-                {
-                    "id": "1",
-                    "dmsf_name": "some clever note",
-                    "dmsf_insert_date": "2015-09-11T10:44:03Z",
-                    "dmsf_owner_full_name": "Thomas Mann",
-                    "dmsf_revision": 1,
-                    "iproc_name": "Name of process",
-                    "meta": { "href": "/files/1211" }
-                }
-            ]
+            "id": "1",
+            "ivar_name": "Variable with text",
+            "ivar_type": "T",
+            "ivar_attribute": "A",
+            "ivar_usage": "M",
+            "ivar_value": "value of variable",
+            "ivar_group": "nameOfTheGroup",
+            "ivar_lov": [
+                {"title": "Yes", value: "Yes"},
+                {"title": "No", value: "No"}
+            ],
+            "meta": { "href": "/task/1211" }
         }
         
 ## Update Task Variables [PUT /tasks/variables]
@@ -788,7 +807,25 @@ Retrieve all non-deleted users.
             "meta": { "href": "/users/{userId}" }
         }
         
+### Update User [POST /users/{userId}]
+
++ Request (application/json)
+
+        {
+            
+        }
+            
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "result": true
+        }
         
++ Response 400 (application/json; charset=utf-8)
+
+        {
+            "error": {"message": "Incorrect ..."}
+        }
         
 ### Get org.structure [GET /org-structure]
 
@@ -916,6 +953,8 @@ Retrieve all non-deleted users.
                         "href": "/roles/23"
                     }
                 }
+            ]
+        }
           
 
 ### Structure of Roles [GET /roles/structure]      
