@@ -806,9 +806,23 @@ Retrieve all non-deleted users.
 + Response 200 (application/json; charset=utf-8)
 
         {
-            "id": 1
+            "id": 1,
             "user_email": "thomas@mann.cz",
-            "user_first´_name": "Thomas",
+            "user_first_name": "Thomas",
+            "user_last_name": "Mann",
+            "user_name": "TMANN",
+            "user_status": "A",
+            "meta": { "href": "/users/{userId}" }
+        }
+        
+
+### Get Info of Logged User [GET /logged-user]
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "id": 1,
+            "user_first_name": "Thomas",
             "user_last_name": "Mann",
             "user_name": "TMANN",
             "user_status": "A",
