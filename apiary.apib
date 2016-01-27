@@ -980,7 +980,7 @@ Retrieve all non-deleted users.
             ]
         }
     
-## Settings [/settings]
+## User Parameters [/user-parameters]
 ### Settings of Logged User [GET]       
 
 + Response 200 (application/json; charset=utf-8)  
@@ -996,6 +996,30 @@ Retrieve all non-deleted users.
                 }
             ]
         }
+        
+### Update Settigs [POST]
+
++ Request 200 (application/json)
+
+        [{
+            "name": "CLIENT_LANGUAGE",
+            "value": "cs"
+        },
+        {
+            "name": "USER_FIRST_NAME",
+            "value": "admin"
+        },
+        {
+            "name": "USER_EMAIL",
+            "value": "test@email.com"
+        }]
+        
++ Response 200
+        
+        {
+            "result": true
+        }
+     
         
 ## Roles  [/roles]
 ### All Roles [GET /roles]
