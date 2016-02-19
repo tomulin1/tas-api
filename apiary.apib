@@ -561,7 +561,23 @@ You can pass parameters for sorting and filtering.
             "result": true,
             "next_itask_id": 222,
             "next_itask_name": "Name of new Task"
-        }        
+        }     
+
+### Variable [/variables]
+
+## Update Variable [POST /variables/{variableId}]
+
++ Request (application/json)
+
+        {
+            "ivar_value": "Value of variable (text, number, date, ...)"
+        }
+            
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "result": true
+        }
         
 ## Custom Views [/custom-views]
 
