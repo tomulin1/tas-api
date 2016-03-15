@@ -726,13 +726,31 @@ Retrieve all non-deleted template processes.
 + Response 200 (application/json; charset=utf-8)
 
         {
-        }          
+            "total_count": "84",
+            "meta": { "href" : "/template-processes/{templateId}/template-variables/" },
+            "completed_in": 21,
+            "previous": null,
+            "next": { "meta": { "href": "/template-processes/{templateId}/template-variables/?offset=20&amp;limit=10"} },
+            "items": [
+                {
+                    "tvar_name":"Vyjádření řešitele",
+                    "tvar_type":"LT",
+                    "tvar_attribute":null,
+                    "tvar_value":null,
+                    "id":1738,
+                    "meta": {
+                        "href":"/template-processes/{tprocId}/template-variables/1738"
+                    }
+                }
+            ]
+        }         
 
 ### Get Template Variable for Template Process [GET /template-variables/{templateVariableId}]       
   
 + Response 200 (application/json; charset=utf-8)
 
         {
+        
         }
   
 ## Template Tasks [/template-processes/{templateId}/template-tasks]
