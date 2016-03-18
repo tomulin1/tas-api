@@ -631,6 +631,49 @@ You can pass parameters for sorting and filtering.
                 }
             ]
         }
+   
+### Create Custom View [POST /custom-views]
+
++ Request (application/json)
+
+        {  
+           "CV_NAME":"Cv name",
+           "TPROC_ID":21,
+           "COLUMNS":[  
+              {  
+                 "CVC_NAME":"COLUMN TITLE 1",
+                 "ORG_ID":1,
+                 "TVAR_ID":21,
+                 "TVAR_NAME":"TVAR_NAME"
+              },
+              {  
+                 "CVC_NAME":"COLUMN TITLE 2",
+                 "ORG_ID":1,
+                 "TVAR_ID":22,
+                 "TVAR_NAME":"TVAR_NAME"
+              }
+           ],
+           "SHARES":[  
+              {  
+                 "USER_ID":84ate95
+              },
+              {  
+                 "USER_ID":1
+              },              
+              {  
+                 "ORGSTR_ID":1
+              },
+              {  
+                 "ROLE_ID":-1
+              }
+           ]
+        }
+            
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "result": true
+        }  
         
 ## Template Process [/template-processes]
 
