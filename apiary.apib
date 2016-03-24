@@ -1317,3 +1317,32 @@ Retrieve all deleted files for user.
         {
             "result": true
         }
+        
+### Update folder [POST /dms/file]
++ Request 200 (application/json)
+
+        {
+          "FOLDER_NAME": "TEST_FOLDER",
+          "PARENT_ID": 1
+        }
+        
++ Response 200
+        
+        {
+            "result": true
+        }   
+        
+        {
+       
+### Delete folder [DELETE /dms/file]
++ Request 200 (application/json)
+
+        {
+          "FOLDER_ID": 1000
+        }
+        
++ Response 200
+        
+        {
+            "result": true
+        }
