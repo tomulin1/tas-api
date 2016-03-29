@@ -1315,10 +1315,17 @@ Retrieve all deleted files for user.
 ### Update file tags [POST /dms/file/:dmsfId/metadata]
 + Request 200 (application/json)
 
-        {
-          "DMST_ID": 1,
-          "DMST_VALUE": "VALENTA_3"
-        }
+        [
+            {
+                "DMST_ID": 1,
+                "DMST_VALUE": "VALENTA_3"
+            },
+            {
+                "DMST_ID": 2,
+                "DMST_VALUE": "good"
+            }
+        ]
+        
         
 + Response 200
         
@@ -1339,8 +1346,6 @@ Retrieve all deleted files for user.
         {
             "result": true
         }   
-        
-        {
        
 ### Delete folder [DELETE /dms/file]
 + Request 200 (application/json)
