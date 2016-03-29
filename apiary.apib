@@ -1276,8 +1276,16 @@ Retrieve all deleted files for user.
 + Request 200 (application/json)
 
         {
-            "name": "xx",
-            "tags": [1, 29]
+            "logical": [
+                {
+                    "name": "UND",
+                    "tags": [1, 28] 
+                },
+                {
+                    "name": "xx",
+                    "tags": [1, 29] 
+                }
+            ]
         }
         
 + Response 200
