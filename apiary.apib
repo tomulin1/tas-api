@@ -1333,6 +1333,48 @@ Retrieve all deleted files for user.
             "result": true
         }
         
+        
+### Search file [POST /dms/search]
++ Request 200 (application/json)
+
+        {
+              "query": "fulltext value",
+              "tags": {"26": "meta value"}  
+        }
+        
+        
++ Response 200 (application/json; charset=utf-8)
+        
+        {
+            "total_count": "84",
+            "meta": { "href" : "/users" },
+            "completed_in": 21,
+            "previous": null,
+            "next": { "meta": { "href": "/processes?offset=20&amp;limit=10"} },
+            "items": [
+                {
+                    "id":8809,
+                    "iproc_id":null,
+                    "iproc_name":null,
+                    "tproc_name":null,
+                    "name":"Seznam subjektů web PK.doc",
+                    "datetime_insert": "2015-10-11T10:44:03Z",
+                    "revision":1,
+                    "user_id_insert":1,
+                    "dmsf_src":"DMS:_165/Seznam subjektu web PK.doc.1654a4890108e1f720d6969a086287e2.1.1428290129",
+                    "dmsf_id_prev": null,
+                    "dmsf_owner":"Admin Admin",
+                    "is_deleted": "Y",
+                    "is_current": "N",
+                    "datetime_deleted": "2015-10-11T10:44:03Z",
+                    "user_id_deleted": 1,
+                    "file_type": "application/pdf",
+                    "meta": { "href":"/dms/all/8809" }
+                }
+            ]
+        }       
+        
+        
 ### Update folder [POST /dms/file]
 + Request 200 (application/json)
 
