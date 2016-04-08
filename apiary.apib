@@ -1073,6 +1073,24 @@ Retrieve all non-deleted users.
             "meta": { "href": "/plan/1211" }
         }
         
+### Set User Vice [POST]
+
++ Request 200 (application/json)
+
+        {
+            "user_id_vice": 101,
+            "enabled": true,
+            "from": "2016-04-01T00:00:00Z",
+            "to": "2016-04-01T00:00:00Z"
+        }
+        
++ Response 200
+        
+        {
+            "result": true
+        }        
+        
+        
 ## Plan [/plans]
 ### All Plans [GET]
         
