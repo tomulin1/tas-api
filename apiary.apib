@@ -1073,42 +1073,26 @@ Retrieve all non-deleted users.
             "meta": { "href": "/plan/1211" }
         }
         
-### Update vice [POST /vice]
+### Update or Create Vice [POST /vice]
 + Request 200 (application/json)
 
         {
-          "FROM": "2016-04-30T21:59:58.000Z",
-          "TO": "2016-04-30T21:59:59.000Z",
-          "USER_ID_VICE": 9495,
-          "USER_ID": 1,
-          "UV_ENABLED": 1,
-          "ALL_RIGHTS": true 
+          "from": "2016-04-30T21:59:58.000Z",
+          "to": "2016-04-30T21:59:59.000Z",
+          "user_id_vice": 9495,
+          "user_id": 1,
+          "uv_enabled": 1,
+          "all_rights": true 
         }
         
 + Response 200 (application/json; charset=utf-8)
-        
+
         {
             "result": true
-        }          
-        
-### Set User Vice [POST]
-
-+ Request 200 (application/json)
-
-        {
-            "user_id_vice": 101,
-            "enabled": true,
-            "from": "2016-04-01T00:00:00Z",
-            "to": "2016-04-01T00:00:00Z"
         }
         
-+ Response 200
-        
-        {
-            "result": true
-        }        
-        
 ### Delete User Vice [DELETE /vice/{id}]
+
 + Request 200 (application/json)
 
         {
