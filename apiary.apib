@@ -274,6 +274,31 @@ You can pass parameters for sorting and filtering.
             "meta": { "href": "/task/1211" }
         }
         
+
+## Get Task Possible Users [GET /tasks/{taskId}/possible-users]
+returns possible users to assign
+
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "total_count": "84",
+            "meta": { "href" : "/tasks/{taskId}/possible-users" },
+            "completed_in": 21,
+            "previous": null,
+            "next": { "meta": { "href": "/tasks/{taskId}/possible-users?offset=20&amp;limit=10"} },
+            "items": [
+                {
+                    "id": "1",
+                    "user_status": "A",
+                    "user_name": "TMANN",
+                    "user_first_name": "Thomas",
+                    "user_last_name": "Mann",
+                    "user_email": "thomas@mann.com",
+                    "meta": { "href": "/users/1211" }
+                }
+            ]
+        }
+        
 ## Update Task Variables [POST /tasks/variables]
 
 + Request (application/json)
