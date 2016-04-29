@@ -669,34 +669,31 @@ returns possible users to assign
 + Request (application/json)
 
         {  
-           "CV_NAME":"Cv name",
-           "TPROC_ID":21,
-           "COLUMNS":[  
+           "cv_name":"Cv name",
+           "tproc_id":21,
+           "cv_visibility": "P",
+           "cv_id": 1662,
+           "cv_filter": [{"column":"V703","enabled":true,"op":"eq","value":"69"}],
+           "columns":[  
               {  
-                 "CVC_NAME":"COLUMN TITLE 1",
-                 "ORG_ID":1,
-                 "TVAR_ID":21,
-                 "TVAR_NAME":"TVAR_NAME"
-              },
-              {  
-                 "CVC_NAME":"COLUMN TITLE 2",
-                 "ORG_ID":1,
-                 "TVAR_ID":22,
-                 "TVAR_NAME":"TVAR_NAME"
+                 "cvc_name":"COLUMN TITLE 2",
+                 "org_id":1,
+                 "tvar_id":46,
+                 "tvar_name":"TVAR_NAME"
               }
            ],
-           "SHARES":[  
+           "shares":[  
               {  
-                 "USER_ID":8495
+                 "user_id":8495
               },
               {  
-                 "USER_ID":1
+                 "user_id":1
               },              
               {  
-                 "ORGSTR_ID":1
+                 "orgstr_id":1
               },
               {  
-                 "ROLE_ID":-1
+                 "role_id":-1
               }
            ]
         }
