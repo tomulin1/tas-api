@@ -342,6 +342,8 @@ returns possible users to assign
         {
             "result": true
         }
+   
+   
         
 ## Retrieve Dynamic List [GET /tasks/dyn-list/{dlName}]
 
@@ -775,6 +777,25 @@ Retrieve all non-deleted template processes.
             ]
         }
 
+### Create Template Process [POST /template-processes]
+
++ Request (application/json)
+
+        {
+            "tproc_name": "my_test2",
+            "tproc_id": 664,
+            "tproc_owner_user_id": 8495,
+            "tproc_description": "Hello world",
+            "tproc_vis_orgstR_id": 1,
+            "tproc_vis_role_id": -1
+        }
+            
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "result": true
+        }  
+
 ### All Template Processes in Folder [GET /template-processes/folder/{id}]
 
 + Response 200 (application/json; charset=utf-8)
@@ -901,6 +922,50 @@ Retrieve all non-deleted template processes.
             "meta": { "href": "/template-task/1211" }
         }  
 
+### Create Template Task [POST /template-tasks]
+
++ Request (application/json)
+
+    {
+        "ttask_completion_co": "A",
+        "ttask_enot_tgt_type": 0,
+        "ttask_invoke_event": "B",
+        "ttask_petri_net_input": 0,
+        "ttask_due_offset": "no",
+        "ttask_duration": "no",
+        "ttask_sufficient_end": "N",
+        "ttask_run_only_once": "N",
+        "ttask_multiinstance_flag": "N",
+        "ttask_reference_user": "supervisor()",
+        "ttask_assesment_hierarchy": "L",
+        "ttask_assesment_method": "T",
+        "ttask_duty": "Y",
+        "tproc_id": 651,
+        "ttask_name": "Hello",
+        "ttask_description": "Trello",
+        "ttask_type": "P",
+        "ttask_subprocess_tproc_id": 503,
+        "ttask_garant": "PO",
+        "ttask_gen_history": "Y",
+        "subp": [
+            {
+                "rdef_id": -1,
+                "tvar_id": null,
+                "tvar_id_dest": 3469,
+                "rdefpar_name": null,
+                "evepar_name": "$CONSTANT",
+                "rdefpar_value": 123,
+                "rdefpar_type": "DL"
+            }
+        ],
+        "subr": null    
+    }
+            
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "result": true
+        }
 
 ## User [/users]
 
