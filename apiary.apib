@@ -1176,6 +1176,20 @@ Retrieve all non-deleted users.
             ]
         }
 
+### Create org.structure [POST /org-structure]
++ Request 200 (application/json)
+
+        {
+          "orgstr_name": "MyTesyt",
+          "users": [1, 8495]
+        }
+        
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "result": true
+        }
+
 ### All org.units [GET /org-units]
 
 + Response 200 (application/json; charset=utf-8)
@@ -1329,6 +1343,20 @@ Retrieve all non-deleted users.
                 }
             ]
         }
+        
+### Create role [POST /roles]
++ Request 200 (application/json)
+
+        {
+          "role_name": "Hello",
+          "users": [1, 8495]
+        }
+        
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "result": true
+        }        
           
 ### Get Role [GET /roles/{roleId}]
 
