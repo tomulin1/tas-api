@@ -967,6 +967,92 @@ Retrieve all non-deleted template processes.
             "result": true
         }
 
+### Create Template Task [POST /template-link]
+
++ Request (application/json)
+
+    {
+        "tproc_id": 651,
+        "ttasklink_from_ttask_id": 3408,
+        "ttasklink_to_ttask_id": 3409,
+        "sourcePort": 1,
+        "targetPort": 3
+    }
+            
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "result": true
+        }
+
+### Delete Template Task [DELETE /template-link/{id}]
+
++ Request 200 (application/json)
+
+        {
+        }
+        
++ Response 200 (application/json; charset=utf-8)
+        
+        {
+            "result": true
+        } 
+
+### Create Template Graph Link [POST /template-processes/{tproc_id}/template-graph-link]
+
++ Request (application/json)
+
+        {
+            "form": "graphControl",
+            "tproc_id": 651,
+            "linkFrom": 3408,
+            "linkTo": 3409,
+            "sourcePort": 1,
+            "targetPort": 3
+        }
+            
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "result": true
+        }
+
+### Move Template Graph Link [POST /template-processes/{tproc_id}/template-graph]
+
++ Request (application/json)
+
+        {
+            "tasks": [
+                {
+                    "id": 3408,
+                    "x": 50,
+                    "y": 196,
+                    "color": "FFE4E1"
+                }
+            ]
+        }
+            
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "result": true
+        }
+
+### Create tmeplate variable [POST /template-processes/{tproc_id}/template-variables]
+
++ Request (application/json)
+
+        {
+          "tvar_name": "Var",
+          "tvar_type": "T"
+        }
+            
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "result": true
+        }
+
 ## User [/users]
 
 ### All Users [GET]
