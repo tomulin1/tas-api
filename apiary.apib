@@ -839,6 +839,7 @@ Retrieve all non-deleted template processes.
             ]
         }   
         
+        
 ### All Template Variables for Template Process [GET /template-processes/{templateId}/template-variables/]
 
 + Response 200 (application/json; charset=utf-8)
@@ -1038,7 +1039,9 @@ Retrieve all non-deleted template processes.
             "result": true
         }
 
-### Create tmeplate variable [POST /template-processes/{tproc_id}/template-variables]
+## Template Variables [/template-processes/:tprocId/template-variables]
+
+### Create Template Variable [POST /template-processes/{tproc_id}/template-variables]
 
 + Request (application/json)
 
@@ -1053,6 +1056,56 @@ Retrieve all non-deleted template processes.
             "result": true
         }
 
+### Template Variables Usage [GET /template-processes/{tproc_id}/template-variables/usage]
+
++ Request (application/json)
+
+        [
+           {
+                "tvar_id": 133,
+                "tvar_name": "Variable name",
+                "tvar_usage": { must: [122,143], read: [450], write: [] }
+            },
+           {
+                "tvar_id": 134,
+                "tvar_name": "Variable name2",
+                "tvar_usage": { must: [122], read: [], write: [450] }
+            }            
+        ]
+
+            
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "result": true
+        }
+
+
+### Update Template Variables Usage [POST /template-processes/{tproc_id}/template-variables/usage]
+
++ Request (application/json)
+
+        [
+           {
+                "tvar_id": 133,
+                "tvar_name": "Variable name",
+                "tvar_usage": { must: [122,143], read: [450], write: [] }
+            },
+           {
+                "tvar_id": 134,
+                "tvar_name": "Variable name2",
+                "tvar_usage": { must: [122], read: [], write: [450] }
+            }            
+        ]
+
+            
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "result": true
+        }
+        
+        
 ## User [/users]
 
 ### All Users [GET]
