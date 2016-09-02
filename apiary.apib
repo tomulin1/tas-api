@@ -1060,41 +1060,59 @@ Retrieve all non-deleted template processes.
 
 + Request (application/json)
 
-        [
-           {
-                "tvar_id": 133,
-                "tvar_name": "Variable name",
-                "ttask_usage": { must: [122,143], read: [450], write: [] }
-            },
-           {
-                "tvar_id": 134,
-                "tvar_name": "Variable name2",
-                "ttask_usage": { must: [122], read: [], write: [450] }
-            }            
-        ]
-
+        [{
+            "global_mapping": "N",
+            "ttask_id": 4623,
+            "ttask_var_mapping": {
+                "read": [6094],
+                "write": [],
+                "must": [],
+                "order": [6094]
+            }
+        },
+        {
+            "global_mapping": "N",
+            "ttask_id": 4712,
+            "ttask_var_mapping": {
+                "read": [6093, 6094],
+                "write": [],
+                "must": [],
+                "order": [6093, 6094]
+            }
+        }]
             
+
 + Response 200 (application/json; charset=utf-8)
 
         {
             "result": true
         }
 
-
 ### Update Template Variables Usage [POST /template-processes/{tproc_id}/template-variables/usage]
 
 + Request (application/json)
 
-        [
-           {
-                "tvar_id": 133,
-                "ttask_usage": { must: [122,143], read: [450], write: [] }
-            },
-           {
-                "tvar_id": 134,
-                "ttask_usage": { must: [122], read: [], write: [450] }
-            }            
-        ]
+        [{
+            "global_mapping": "N",
+            "ttask_id": 4623,
+            "ttask_var_mapping": {
+                "read": [6094],
+                "write": [],
+                "must": [],
+                "order": [6094]
+            }
+        },
+        {
+            "global_mapping": "N",
+            "ttask_id": 4712,
+            "ttask_var_mapping": {
+                "read": [6093,
+                        6094],
+                "write": [],
+                "must": [],
+                "order": [6093, 6094]
+            }
+        }]
 
             
 + Response 200 (application/json; charset=utf-8)
@@ -1130,29 +1148,29 @@ Retrieve all non-deleted users.
             ]
         }
         
-### Update user [POST /users]
+### Create/Update user [POST /users]
 + Request 200 (application/json)
 
         {
-          "USER_NAME": "MY_NAME",
-          "USER_ID": 15506,
-          "USER_EMAIL": "email@dot.com",
-          "USER_FIRST_NAME": "jmeno",
-          "USER_LAST_NAME": "prijmeni",
-          "ROLES": [-1, -4],
-          "ORGANIZATION": {
-                "ORGSTR_ID": 1,
-                "MANAGER": false
-          }
+            "id": 15506,
+            "user_name": "MY_NAME",
+            "user_email": "email@dot.com",
+            "user_first_name": "jmeno",
+            "user_last_name": "prijmeni",
+            "roles": [-1, -4],
+            "organization": {
+                "orgstr_id": 1,
+                "manager": false
+            }
         }
         
 + Response 200 (application/json; charset=utf-8)
-        
+
         {
             "result": true
-        }          
+        }
         
-  
+
 ### All Deleted Users [GET /users/deleted]
 
 + Response 200 (application/json; charset=utf-8)
@@ -1246,26 +1264,6 @@ Retrieve all non-deleted users.
             "meta": { "href": "/users/{userId}" }
         }
         
-### Update User [POST /users/{userId}]
-
-+ Request (application/json)
-
-        {
-            
-        }
-            
-+ Response 200 (application/json; charset=utf-8)
-
-        {
-            "result": true
-        }
-        
-+ Response 400 (application/json; charset=utf-8)
-
-        {
-            "error": {"message": "Incorrect ..."}
-        }
-        
 ### Get org.structure [GET /org-structure]
 
 + Response 200 (application/json; charset=utf-8)
@@ -1313,7 +1311,7 @@ Retrieve all non-deleted users.
             ]
         }
 
-### Create org.structure [POST /org-structure]
+### Create/Update Org.unit [POST /org-structure]
 + Request 200 (application/json)
 
         {
@@ -1452,14 +1450,13 @@ Retrieve all non-deleted users.
             "name": "USER_EMAIL",
             "value": "test@email.com"
         }]
-        
-+ Response 200
-        
+
++ Response 200 (application/json; charset=utf-8)
+
         {
             "result": true
         }
-     
-        
+
 ## Roles  [/roles]
 ### All Roles [GET /roles]
 
@@ -1488,13 +1485,13 @@ Retrieve all non-deleted users.
           "role_name": "Hello",
           "users": [1, 8495]
         }
-        
+
 + Response 200 (application/json; charset=utf-8)
 
         {
             "result": true
-        }        
-          
+        }
+ 
 ### Get Role [GET /roles/{roleId}]
 
 + Parameters
@@ -1655,10 +1652,10 @@ Retrieve all deleted files for user.
         }
         
 + Response 200 (application/json; charset=utf-8)
-        
+
         {
             "result": true
-        }  
+        }
 
 ### Update tags [POST /dms/tags]
 + Request 200 (application/json)
@@ -1673,11 +1670,11 @@ Retrieve all deleted files for user.
         }
         
 + Response 200 (application/json; charset=utf-8)
-        
+
         {
             "result": true
-        }  
-        
+        }
+
 ### Update file tags [POST /dms/file/:dmsfId/metadata]
 + Request 200 (application/json)
 
@@ -1694,23 +1691,25 @@ Retrieve all deleted files for user.
         
         
 + Response 200 (application/json; charset=utf-8)
-        
+
         {
             "result": true
         }
-        
-        
+
+
 ### Search file [POST /dms/search]
 + Request 200 (application/json)
 
         {
-              "query": "fulltext value",
-              "tags": {"26": "meta value"}  
+            "query": "fulltext value",
+            "tags": {
+                "26": "meta value"
+            }
         }
-        
+
         
 + Response 200 (application/json; charset=utf-8)
-        
+
         {
             "total_count": "84",
             "meta": { "href" : "/users" },
@@ -1750,11 +1749,11 @@ Retrieve all deleted files for user.
         }
         
 + Response 200 (application/json; charset=utf-8)
-        
+
         {
             "result": true
-        }   
-       
+        }
+
 ### Delete folder [DELETE /dms/file]
 + Request 200 (application/json)
 
@@ -1763,7 +1762,7 @@ Retrieve all deleted files for user.
         }
         
 + Response 200 (application/json; charset=utf-8)
-        
+
         {
             "result": true
         }
