@@ -36,24 +36,29 @@ You can pass parameters for sorting and filtering.
 + Response 200 (application/json; charset=utf-8)
 
         {
-            "access_token": "a4ef8fd62eda54ade12fbb068da89092",
-            "expires_in": 72000,
-            "refreshTokenValidTo": "2016-12-03T15:36:06.115Z",
-            "refresh_token": "y4gPzRDX52XSwA7sRb5Bfk1sMx2rlmBB6AE22AsaiQyK8woCdXqRCHFfA0LOGhA9",
-            "tokenValidTo": "2015-12-05T11:36:06.115Z",
+            "access_token": "0e26a1594ae080b7ddacd0bc57daa91f"
             "token_type": "Bearer"
+            "refresh_token": "0ncD5zVZOSDtCfarxg6kFXJ6oR7G4QyZqZbkI3AwJPHVbSazDjBBmVDI1PQdvAei"
+            "expires_in": 72000
+            "tokenValidTo": "2016-10-06T11:47:08.092Z"
+            "refreshTokenValidTo": "2017-10-05T15:47:08.092Z"
         }
 
 ### Logout [POST /logout]
 
-+ Request Login (application/json)
++ Request Login
 
-        {
-        }
-
+    + Headers
+    
+                Content-type: application/json
+                Authorization: Bearer 0d4a227664de9e38eba9ff1bb03d6bf5
+    + Body    
+    
+                {
+                }
 + Response 200 (application/json; charset=utf-8)
 
-        {
+        {1
         }
         
 ## Task [/tasks]
@@ -1148,6 +1153,58 @@ Retrieve all non-deleted users.
             ]
         }
         
+### Create user [POST /users]
++ Request 200
+
+    + Headers
+    
+                Content-Type: application/json
+                Authorization: Bearer 0d4a227664de9e38eba9ff1bb03d6bf5
+                
+    + Attributes (object)
+        
+        + user_name
+            NOT NULL
+        + user_password
+            NOT NULL, minimum 3 characters
+        + first_name
+            NOT NULL
+        + last_name
+            NOT NULL
+        + user_email
+        + roles (array)
+        + managed_organizations (array)
+        + user_status
+            in [A, D, L] ... Active, Deleted, Locked
+        + org_id (number)
+        + user_change_password
+        + user_bad_login_count (number)
+        + user_title_prefix
+        + user_external_login
+        + user_external_source
+        + user_comp_id
+        + user_comp_code
+        
+    + Body
+    
+            {
+                "user_name": "MY_NAME",
+                "user_password": "MY_PASSWORD",
+                "user_email": "email@dot.com",
+                "user_first_name": "Name",
+                "user_last_name": "Surname",
+                "org_id": 1,
+                "roles": [-1, -4]
+            }
+        
++ Response 200 (application/json; charset=utf-8)
+
+        {
+            "result": true,
+            "id": 1584
+        }
+        
+
 ### Create/Update user [POST /users]
 + Request 200 (application/json)
 
