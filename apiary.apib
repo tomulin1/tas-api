@@ -514,20 +514,28 @@ returns possible users to assign
 + Response 200 (application/json; charset=utf-8)
 
         {
-            "id": "Example of task",
-            "tproc_name": "Name of template",
-            "iproc_name": "Name of the process",
-            "iproc_description": "Some description.",
-            "iproc_owner_full_name": "Thomas Mann",
-            "iproc_owner_orgstr_name": "Head of Marketing",
-            "iproc_status": "A",
-            "iproc_actual_start_date": "2015-09-11T10:44:03Z",
-            "iproc_actual_finish_date" : "2015-09-11T10:44:03Z",
-            "iproc_due_date_finish": "2015-09-11T10:44:03Z",
-            "iproc_summary": "summary of process",
-            "iproc_url": "http://alfresco.com/",
-            "iproc_url_tab_name": "Alfresco"
-            "meta": { "href": "/process/{id}" }
+        "org_id": 1
+        "tproc_id": 3
+        "iproc_name": "Edit"
+        "iproc_description": "Something"
+        "iproc_notes": ""
+        "iproc_inst_owner_user_id": 8
+        "iproc_status": "A"
+        "iproc_actual_start_date": "2016-10-31T11:44:43.000Z"
+        "iproc_actual_finish_date": null
+        "iproc_due_date_finish": null
+        "iproc_priority": "M"
+        "iproc_summary": "test1: Apac Arnost, test2: Apac Arnost, test3: Apac Arnost"
+        "iproc_main_iproc_id": -1
+        "iproc_vis_role_id": null
+        "user_id": 8
+        "iproc_owner_full_name": "Apac Arnost"
+        "tproc_name": "testTPb11"
+        "folstr_name": null
+        "c_sus": 1
+        "c_hev": 1
+        "id": 1
+        "meta": {"href": "/processes/1"}
         }
 
 ## Get Process Variables [GET /processes/{processId}/variables]
