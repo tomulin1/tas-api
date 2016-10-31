@@ -797,12 +797,43 @@ returns possible users to assign
             "completed_in": 121,
             "items": [
                 {
-                    "id": "1",
-                    "cv_name": "some clever note",
-                    "tproc_name": "Template process name",
-                    "cv_visibility": "P",
-                    "cv_iproc_status_list": 1,
-                    "meta": { "href": "/custom-view/1" }
+        "cv_sort": "asc"
+        "cv_order": "V-1"
+        "cv_name": "test custom viewb13"
+        "cv_filter": [1]
+        0:  {
+        "column": "V3"
+        "value": "nope"
+        "op": "like"
+        "enabled": true
+        }-
+        -
+        "tproc_name": "testTPb13"
+        "cv_iproc_status_list": "A"
+        "tproc_id": 2
+        "roles_share": [0]
+        "users_share": [0]
+        "orgs_share": [0]
+        "cv_owner_name": "Apac Arnost"
+        "cv_user_id": 5
+        "columns": [2]
+        0:  {
+        "tvar_id": -1
+        "tvar_name": "Název případu"
+        "tvar_attribute": null
+        "tvar_multi": null
+        "tvar_type": "T"
+        }-
+        1:  {
+        "tvar_id": -2
+        "tvar_name": "Karel"
+        "tvar_attribute": null
+        "tvar_multi": null
+        "tvar_type": "N"
+        }-
+        -
+        "id": 2
+        "meta": {"href": "/custom-views/:id?/2"}
                 }
             ]
         }
@@ -817,23 +848,16 @@ returns possible users to assign
             "completed_in": 121,
             "items": [
                 {
-                    "id": "1",
-                    "iproc_name": "some clever note",
-                    "iproc_description": "Template process name",
-                    "iproc_inst_owner_user": "P",
-                    "iproc_actual_start_date": 1,
-                    "iproc_due_date_finish": null,
-                    "iproc_priority": "M",
-                     "iproc_summary": null,
-                     "variables": [
-                        {
-                            "value": "some value",
-                            "tvar_id": "4321",
-                            "ivar_id": "1234",
-                            "ivar_name": "Název"
-                        }
-                     ],
-                    "meta": { "href": "/custom-view/2489" }
+        "iproc_name": "Edit"
+        "iproc_description": "Description...."
+        "iproc_inst_owner_user": "Apac Arnost"
+        "iproc_actual_start_date": "2016-10-31T14:45:44.000Z"
+        "iproc_due_date_finish": null
+        "iproc_priority": "M"
+        "iproc_summary": "test1: Apac Arnost, test2: Apac Arnost, test3: Apac Arnost"
+        "iproc_actual_finish_date": null
+        "id": 7
+        "meta": {"href": ""}
                 }
             ]
         }
