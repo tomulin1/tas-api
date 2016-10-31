@@ -4,6 +4,7 @@ HOST: http://polls.apiblueprint.org/
 # Teamassistant (TAS)
 
 REST Api is a complex API for managing entities of TAS and controlling workflows.
+
 ## Retrieving Lists
 You can pass parameters for sorting and filtering.
 
@@ -442,7 +443,7 @@ returns possible users to assign
 ## Process [/processes]
 
 ### All Processes [GET]
-
+ All Processes [GET]
 + Response 200 (application/json; charset=utf-8)
 
         {
@@ -453,16 +454,28 @@ returns possible users to assign
             "next": { "meta": { "href": "/processes?offset=20&amp;limit=10"} },
             "items": [
                 {
-                    "id": "1",
-                    "iproc_name": "Case nr.1",
-                    "tproc_name": "Template of process",
-                    "folstr_name": "Folder nr.1",
-                    "iproc_owner_full_name": "Thomas Mann",
-                    "iproc_actual_start_date": "2015-09-01T12:44:03Z",
-                    "iproc_actual_finish_date": "2015-10-11T10:44:03Z",
-                    "iproc_due_date_finish": "2015-09-11T10:44:03Z",
-                    "iproc_summary": "Task: Thomas Mann",
-                    "meta": { "href": "/process/{id}" }
+        "org_id": 1
+        "tproc_id": 3
+        "iproc_name": "Edit"
+        "iproc_description": "Something"
+        "iproc_notes": ""
+        "iproc_inst_owner_user_id": 8
+        "iproc_status": "A"
+        "iproc_actual_start_date": "2016-10-31T11:44:43.000Z"
+        "iproc_actual_finish_date": null
+        "iproc_due_date_finish": null
+        "iproc_priority": "M"
+        "iproc_summary": "test1: Apac Arnost, test2: Apac Arnost, test3: Apac Arnost"
+        "iproc_main_iproc_id": -1
+        "iproc_vis_role_id": null
+        "user_id": 8
+        "iproc_owner_full_name": "Apac Arnost"
+        "tproc_name": "testTPb11"
+        "folstr_name": null
+        "c_sus": 1
+        "c_hev": 1
+        "id": 1
+        "meta": {"href": "/processes/1"}
                 }
             ]
         }
